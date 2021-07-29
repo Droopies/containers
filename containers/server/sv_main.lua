@@ -27,8 +27,15 @@ end)
 
 RegisterServerEvent('ReceiveCoords')
 AddEventHandler('ReceiveCoords', function()
-    exports.ghmattimysql:execute('SELECT model,x,y,z FROM containers', function(data)
-        YourMom = data
-        TriggerClientEvent("SpawnCrates", -1, YourMom)
-    end)
+    if Config.ghmattimysql then
+        exports.ghmattimysql:execute('SELECT model,x,y,z FROM containers', function(data)
+            YourMom = data
+            TriggerClientEvent("SpawnCrates", -1, YourMom)
+        end)
+    else
+        MySQL.Async.execute('SELECT model,x,y,z FROM containers', function(data)
+            YourMom = data
+            TriggerClientEvent("SpawnCrates", -1, YourMom)
+        end)
+    end
 end)
