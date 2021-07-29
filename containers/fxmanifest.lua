@@ -5,9 +5,11 @@ author 'Droopies'
 version '1.0'
 
 client_scripts {
-'client/container.lua'
+'client/*.lua'
 }
 
 server_scripts {
-'server/sv_container.lua'
+"@mysql-async/lib/MySQL.lua",,
+'config.lua',
+'server/*.lua',
 }
