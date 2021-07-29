@@ -4,10 +4,10 @@
 
 # Example of how to use it with your inventory
 
+```
 let Containers = [
     { objectID: 758360035, Description: 'Parcel' },
 ];
-
 
 function ScanExtraStashes() {
     let player = PlayerPedId();
@@ -58,3 +58,4 @@ Add this to your inventory-open event
         let container = "barrel|" + x + "|" + y;
         emitNet("server-inventory-open", startPosition, cid, "1", "Container-" + container);
  }
+```
