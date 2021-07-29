@@ -11,7 +11,6 @@ AddEventHandler("PlaceCrate1", function(model, coords)
     CreatedObjects = CreateObject(model, coords)
     FreezeEntityPosition(CreatedObjects, true)
     TriggerServerEvent("containers:new", model, coords)
-end
 end)
 
 function CrateTarget(distance)
